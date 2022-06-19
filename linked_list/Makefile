@@ -1,5 +1,7 @@
-NAME = libft.a
+NAME = liblist.a
+
 SRCS = *.c
+
 SRCO = $(SRCS:.c=.o)
 
 all : $(NAME)
