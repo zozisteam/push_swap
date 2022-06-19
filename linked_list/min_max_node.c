@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   min_max_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 19:12:26 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/19 13:48:19 by alalmazr         ###   ########.fr       */
+/*   Created: 2022/06/19 13:10:56 by alalmazr          #+#    #+#             */
+/*   Updated: 2022/06/19 13:18:36 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "linked_list.h"
 
-void	pa(t_node *a, t_node *b)
+int	find_largest(t_node *head)
 {
-	push(&a, pop(&b));
-	printf("pa\n");
+	int max;
+
+	max = head->data;
+	while (head != NULL)
+	{
+		if (max < head->data)
+			max = head->data;
+		head = head->next;
+	}
+	return (max);
 }
-
-void	pb(t_node *a, t_node *b)
+ 
+int	find_smallest(t_node *head)
 {
-	push(&b, pop(&a));
-	printf("pb\n");
+	int min;
+ 
+	min = head->data;
+	while (head != NULL)
+	{
+		if (min > head->data)
+			min = head->data;
+		head = head->next;
+	}
+	return (min);
 }

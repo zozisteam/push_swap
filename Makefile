@@ -1,5 +1,5 @@
 NAME = push_swap
-FILES = push_swap.c ps_operations/pa_pb.c ps_operations/ra_rb_rr.c ps_operations/rra_rrb_rrr.c ps_operations/sa_sb_ss.c 
+FILES = push_swap.c ps_sort/sort.c ps_operations/pa_pb.c ps_operations/ra_rb_rr.c ps_operations/rra_rrb_rrr.c ps_operations/sa_sb_ss.c 
 SRC = $(FILES)
 OBJ = $(SRC=.c=.o)
 FLAGS = -Wall -Werror -Wextra
@@ -18,10 +18,12 @@ all: $(NAME)
 
 clean:
 	rm -rf $(OBJ)
+	cd linked_list && make clean
+	cd libft && make clean
 
 fclean: clean
 	rm -rf $(NAME)
-	make clean -C linked_list
-	make clean -C libft
+	cd linked_list && make fclean
+	cd libft && make fclean
 
 re: fclean all

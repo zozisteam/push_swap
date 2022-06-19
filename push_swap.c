@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/10 18:28:15 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:53:53 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ void	init_stack(t_node **a, char **argv)
 
 int	check_args(int argc, char **argv)
 {
-	
+	(void) argc;
+	(void) argv;
+	//check no recurring num
+	//check only nums
 	return (1);
 }
 
@@ -43,8 +46,15 @@ int	main(int argc, char **argv)
 	if (!check_args(argc, argv))
 		return (0);
 	init_stack(&a, argv);
-	sort(&a, &b);
+	sort(&a, &b, list_len(a));
+	printf("a:\n");
 	print_list(a);
+	sa(a);
+	//pb(&a, &b);
+	printf("a:\n");
+	print_list(a);
+	//printf("b:\n");
+	//print_list(b);
 	free(a);
 	free(b);
 //	sort_stacks(a, b);

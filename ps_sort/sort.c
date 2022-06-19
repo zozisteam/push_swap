@@ -6,7 +6,16 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:11:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/06 03:11:21 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:30:35 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
+int	sort(t_node **a, t_node **b, int len)
+{
+	(void) a;
+	(void) b;
+	(void) len;
+	return (1);
+}

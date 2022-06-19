@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 20:23:41 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/06 01:38:11 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/19 13:13:54 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 int list_len(t_node *head)
 {
     int count;
-    t_node* current;
-	
-	current = head;
+
 	count = 0;
-    while (current != NULL)
+    while (head != NULL)
     {
         count++;
-        current = current->next;
+        head = head->next;
     }
     return (count);
 }
