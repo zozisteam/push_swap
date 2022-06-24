@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   check_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/05 19:12:26 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 13:44:04 by alalmazr         ###   ########.fr       */
+/*   Created: 2022/06/21 14:09:38 by alalmazr          #+#    #+#             */
+/*   Updated: 2022/06/21 14:13:03 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_node **a, t_node **b)
+int	sorted(t_node *head)
 {
-	push(a, pop(b));
-	printf("pa\n");
-}
+	t_node	*current;
 
-void	pb(t_node **a, t_node **b)
-{
-	push(b, pop(a));
-	printf("pb\n");
+	current = head;
+	while(current->next)
+	{
+		if (current->data > current->next->data)
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }
