@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 01:23:53 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/22 00:23:11 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/26 00:58:21 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		get_index(t_node *head, int x);
 int		find_smallest(t_node *head);
 int		find_largest(t_node *head);
 void	sort_list(t_node *head);
+t_node	*list_dup(t_node* head);
 
 #endif

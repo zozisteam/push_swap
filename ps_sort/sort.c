@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:11:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/23 14:03:46 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/26 00:49:57 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	sort(t_node **a, t_node **b, int len)
 		sort_10(a, b);
 	else if (len <= 100)
 		sort_99(a, b);
-	else if (len > 100)
-		sort_100s(a, b);
+	// else if (len > 100)
+	// 	sort_100s(a, b);
 	return (1);
 }

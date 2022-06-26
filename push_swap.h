@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:23:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 23:37:35 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/06/26 00:49:26 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	rrr(t_node **a, t_node **b);
 //sorting
 int		sort(t_node **a, t_node **b, int len);
 int		sorted(t_node *head);
+void	sort_99(t_node **a, t_node **b);
 void	sort_10(t_node **a, t_node **b);
 void	sort_5(t_node **a, t_node **b);
 void	sort_3(t_node **a);
