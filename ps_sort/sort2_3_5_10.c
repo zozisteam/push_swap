@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort2_3_10.c                                       :+:      :+:    :+:   */
+/*   sort2_3_5_10.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 23:40:33 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/25 11:56:18 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort_5(t_node **a, t_node **b)
 	i = 0;
 	while (i < 2)
 	{
-		get_min_top(a, get_index(*a, find_smallest(*a)));
+		get_to_top(a, get_index(*a, find_smallest(*a)));
 		pb(a, b);
 		i++;
 	}
@@ -78,7 +78,7 @@ void	sort_10(t_node **a, t_node **b)
 	i = 0;	
 	while (list_len(*a) > 2)
 	{
-		get_min_top(a, get_index(*a, find_smallest(*a)));
+		get_to_top(a, get_index(*a, find_smallest(*a)));
 		pb(a, b);
 	}
 	sort_2(a);

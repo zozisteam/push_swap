@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:25:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 14:54:13 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:58:21 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,11 @@ int	find_smallest(t_node *head)
 	return (min);
 }
 
-void print_list(t_node *current)
+void print_list(t_node *head)
 {
+	t_node	*current;
+
+	current = head;
 	while (current != NULL)
 	{
 		printf("%d  ", current->data);

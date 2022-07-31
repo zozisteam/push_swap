@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:44 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 13:42:50 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:36:19 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sa(t_node *a)
 	x = a->data;
 	a->data = a->next->data;
 	a->next->data = x;
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_node *b)
@@ -29,7 +29,7 @@ void	sb(t_node *b)
 	x = b->data;
 	b->data = b->next->data;
 	b->next->data = x;
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
 void	ss(t_node *a, t_node *b)
@@ -42,5 +42,5 @@ void	ss(t_node *a, t_node *b)
 	x = a->data;
 	a->data = a->next->data;
 	a->next->data = x;
-	printf("ss\n");
+	ft_printf("ss\n");
 }

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 01:23:53 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/26 00:58:21 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:59:13 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 typedef struct node {
 	int			data;
+	int			i;
 	struct node	*next;
 }				t_node;
 
 //classic shit
 void	push(t_node **head_ref, int new_data);
+void	push_i(t_node **head_ref, int new_data, int i);
 int		pop(t_node **head);
 void	delete_node(t_node **head);
 //utils
@@ -32,7 +34,7 @@ t_node	*get_i_node(t_node *head, int i);
 int		get_index(t_node *head, int x);
 int		find_smallest(t_node *head);
 int		find_largest(t_node *head);
-void	sort_list(t_node *head);
+void	sort_list(t_node **head);
 t_node	*list_dup(t_node* head);
 
 #endif

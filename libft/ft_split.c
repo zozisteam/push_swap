@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:59:42 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/05/06 19:39:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/27 23:40:08 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,3 @@ char	**ft_split(char  *string, char delimeter)
 	split[i] = NULL;
 	return (split);
 }
-
-// int main()
-// {
-
-// 	 char * * grid = ft_split("     ", ' ');
-
-// 	return 0;
-// }

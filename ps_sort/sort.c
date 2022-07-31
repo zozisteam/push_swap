@@ -6,58 +6,47 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:11:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/26 00:49:57 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/31 13:32:52 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+// #include "../linked_list/list_utils.c"
+// #include "../linked_list/push.c"
+// #include "../linked_list/list_sort.c"
+// #include "../linked_list/list_len.c"
+// #include "../linked_list/pop.c"
+// #include "../linked_list/delete_node.c"
 
-void	r_loop(t_node **a, int reps)
+
+void	set_index(t_node *a, int len)
 {
-	int i;
+	t_node	*sorted;
+	int		i;
 
-	i = 0;
-	while(i < reps)
+	sorted = (list_dup(a));
+	sort_list(&sorted);
+	i = 1;
+	while (i <= len)
 	{
-		ra(a);
+		get_i_node(a, get_index(a, sorted->data))->i = i;
+		pop(&sorted);
 		i++;
 	}
-}
-
-void	rr_loop(t_node **a, int reps)
-{
-	int i;
-
-	i = 0;
-	while(i < reps)
-	{
-		rra(a);
-		i++;
-	}
-}
-
-void	get_min_top(t_node **a, int min_index)
-{
-	if (min_index == 0)
-		return ;
-	else
-	{
-		if (min_index > list_len(*a)/2)
-			rr_loop(a, list_len(*a) - min_index);
-		else
-			r_loop(a, min_index);
-	}
+	free_stack(&sorted);
 }
 
 int	sort(t_node **a, t_node **b, int len)
 {
+	//printf("%d\n", len);
+	set_index(*a, len); //getindex.c omar
 	if (len == 2)
 		sort_2(a);
 	else if (len == 3)
 		sort_3(a);
 	else if (len == 4)
 	{
-		get_min_top(a, get_index(*a, find_smallest(*a)));
+		get_to_top(a, get_index(*a, find_smallest(*a)));
 		pb(a, b);
 		if (!sorted(*a))
 			sort_3(a);
@@ -67,9 +56,29 @@ int	sort(t_node **a, t_node **b, int len)
 		sort_5(a, b);
 	else if (len < 10)
 		sort_10(a, b);
-	else if (len <= 100)
-		sort_99(a, b);
-	// else if (len > 100)
-	// 	sort_100s(a, b);
-	return (1);
+	else
+		sort_more(a, b);
+	 return (1);
 }
+
+// int main()
+// {
+// 	t_node *a;
+
+// 	push(&a, 5);
+// 	push(&a, 20);
+// 	push(&a, 100);
+// 	push(&a, 1);
+// 	push(&a, -1);
+// 	push(&a, 9);
+// 	print_list(a);
+// 	set_index(a, list_len(a));
+// 	print_list(a);
+// 	int i = 1;
+// 	t_node *tmp = a;
+// 	while (tmp)
+// 	{
+// 		printf("%d ", tmp->i);
+// 		tmp = tmp->next;
+// 	}
+// }

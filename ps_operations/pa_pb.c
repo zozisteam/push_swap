@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:26 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/21 13:44:04 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:36:50 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 void	pa(t_node **a, t_node **b)
 {
-	push(a, pop(b));
-	printf("pa\n");
+	t_node *tmp;
+
+	tmp = *b;
+	push(a, tmp->data);
+	pop(b);
+	ft_printf("pa\n");
 }
 
 void	pb(t_node **a, t_node **b)
 {
-	push(b, pop(a));
-	printf("pb\n");
+	t_node *tmp;
+
+	tmp = *a;
+	push(b, tmp->data);
+	pop(a);
+	ft_printf("pb\n");
 }

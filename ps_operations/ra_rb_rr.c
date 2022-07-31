@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:38 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/06 01:48:07 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/28 18:36:41 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ra(t_node **a)
 	last->next = head;
 	(*a) = head->next;
 	head->next = NULL;
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rb(t_node **b)
@@ -36,7 +36,7 @@ void	rb(t_node **b)
 	last->next = head;
 	(*b) = head->next;
 	head->next = NULL;
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
 void	rr(t_node **a, t_node **b)
@@ -54,5 +54,5 @@ void	rr(t_node **a, t_node **b)
 	last->next = head;
 	(*b) = head->next;
 	head->next = NULL;
-	printf("rr\n");
+	ft_printf("rr\n");
 }

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:23:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/06/26 00:49:26 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/07/29 00:54:22 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,28 @@ void	rrr(t_node **a, t_node **b);
 //sorting
 int		sort(t_node **a, t_node **b, int len);
 int		sorted(t_node *head);
-void	sort_99(t_node **a, t_node **b);
+void	sort_more(t_node **a, t_node **b);
 void	sort_10(t_node **a, t_node **b);
 void	sort_5(t_node **a, t_node **b);
 void	sort_3(t_node **a);
 void	sort_2(t_node **a);
-void	get_min_top(t_node **a, int min_index);
+
+
+//list operations
+int		get_blocks(int list_len);
+void	update_pos(t_node **stack);
+void	push_back(t_node **a, t_node **b);
+void	get_to_top(t_node **stack, int index);
 void	r_loop(t_node **a, int reps);
 void	rr_loop(t_node **a, int reps);
+
+//parsing
+int		parse(t_node **a, int argc, char **argv);
+int		validate_input(t_node **a, int argc, char **argv);
+void	init_stack(t_node **a, char **numbers, int argc);
+
+void	error(void);
+void	free2(char **x);
+void	free_stack(t_node **a);
 
 #endif
