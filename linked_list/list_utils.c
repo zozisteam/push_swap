@@ -6,32 +6,32 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:25:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/27 18:58:21 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:16:07 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-t_node *get_i_node(t_node *head, int i)
+t_node	*get_i_node(t_node *head, int i)
 {
-	int	count;
-    t_node *current;
+	int		count;
+	t_node	*current;
 
 	current = head;
-    count = 0;
-    while (current != NULL)
+	count = 0;
+	while (current != NULL)
 	{
-        if (count == i)
-            return (current);
-        count++;
-        current = current->next;
-    }
+		if (count == i)
+			return (current);
+		count++;
+		current = current->next;
+	}
 	return (NULL);
 }
 
 int	find_largest(t_node *head)
 {
-	int max;
+	int	max;
 
 	max = head->data;
 	while (head != NULL)
@@ -42,11 +42,11 @@ int	find_largest(t_node *head)
 	}
 	return (max);
 }
- 
+
 int	find_smallest(t_node *head)
 {
-	int min;
- 
+	int	min;
+
 	min = head->data;
 	while (head != NULL)
 	{
@@ -57,7 +57,7 @@ int	find_smallest(t_node *head)
 	return (min);
 }
 
-void print_list(t_node *head)
+void	print_list(t_node *head)
 {
 	t_node	*current;
 
@@ -70,21 +70,19 @@ void print_list(t_node *head)
 	printf("\n");
 }
 
-
-int get_index(t_node *head, int x)
+int	get_index(t_node *head, int x)
 {
-    t_node	*current;
+	t_node	*current;
 	int		i;
 
 	current = head;
 	i = 0;
-    while (current != NULL)
-    {
-        if (current->data == x)
-            return (i);
-        current = current->next;
+	while (current != NULL)
+	{
+		if (current->data == x)
+			return (i);
+		current = current->next;
 		i++;
-    }
-    return (-1);
+	}
+	return (-1);
 }
-

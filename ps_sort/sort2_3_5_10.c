@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/25 11:56:18 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:10:27 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_2(t_node **a)
 {
-	t_node *head;
+	t_node	*head;
 
 	head = *a;
 	if (head->data > head->next->data)
@@ -23,15 +23,17 @@ void	sort_2(t_node **a)
 
 void	sort_3(t_node **a)
 {
-	t_node *head;
+	t_node	*head;
 
 	head = *a;
-	if (head->data > head->next->data && find_largest(*a) == head->next->next->data)
+	if (head->data > head->next->data && find_largest(*a)
+		== head->next->next->data)
 	{
 		sa(*a);
 		return ;
 	}
-	if (head->data > head->next->data && find_smallest(*a) == head->next->next->data)
+	if (head->data > head->next->data && find_smallest(*a)
+		== head->next->next->data)
 	{
 		sa(*a);
 		rra(a);
@@ -55,7 +57,7 @@ void	sort_3(t_node **a)
 
 void	sort_5(t_node **a, t_node **b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 2)
@@ -73,9 +75,9 @@ void	sort_5(t_node **a, t_node **b)
 void	sort_10(t_node **a, t_node **b)
 {
 	int	i;
-	int size;
+	int	size;
 
-	i = 0;	
+	i = 0;
 	while (list_len(*a) > 2)
 	{
 		get_to_top(a, get_index(*a, find_smallest(*a)));

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:26 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/28 18:36:50 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:19:01 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = *b;
 	push(a, tmp->data);
@@ -24,7 +24,7 @@ void	pa(t_node **a, t_node **b)
 
 void	pb(t_node **a, t_node **b)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	tmp = *a;
 	push(b, tmp->data);

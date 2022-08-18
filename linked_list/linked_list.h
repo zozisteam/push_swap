@@ -6,14 +6,14 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 01:23:53 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/27 18:59:13 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:59:00 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LINKED_LIST_H
 # define LINKED_LIST_H
 
-#include "../libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct node {
 	int			data;
@@ -35,6 +35,6 @@ int		get_index(t_node *head, int x);
 int		find_smallest(t_node *head);
 int		find_largest(t_node *head);
 void	sort_list(t_node **head);
-t_node	*list_dup(t_node* head);
+t_node	*list_dup(t_node *head);
 
 #endif

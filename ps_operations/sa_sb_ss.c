@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:44 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/28 18:36:19 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:20:02 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sb(t_node *b)
 
 void	ss(t_node *a, t_node *b)
 {
-	int x;
+	int	x;
 
 	x = b->data;
 	b->data = b->next->data;

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:49:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/01 09:22:29 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:20:15 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	get_blocks(int list_len)
 		return (4);
 	else
 		return (2);
-		
-		
 }
 
 void	push_back(t_node **a, t_node **b)

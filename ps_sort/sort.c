@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:11:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/01 10:41:16 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:09:03 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,33 @@
 // #include "../linked_list/pop.c"
 // #include "../linked_list/delete_node.c"
 
+void	free_stack(t_node **a)
+{
+	t_node	*current;
+
+	current = *a;
+	while (current != NULL)
+	{
+		delete_node(a);
+		current = *a;
+	}
+}
+
+void	free2(char **x)
+{
+	int	i;
+
+	i = 0;
+	if (x)
+	{
+		while (x[i])
+		{
+			free(x[i]);
+			i++;
+		}
+	}
+	free(x);
+}
 
 void	set_index(t_node *a, int len)
 {
@@ -38,8 +65,7 @@ void	set_index(t_node *a, int len)
 
 int	sort(t_node **a, t_node **b, int len)
 {
-	//printf("%d\n", len);
-	set_index(*a, len); //getindex.c omar
+	set_index(*a, len);
 	if (len == 2)
 		sort_2(a);
 	else if (len == 3)
@@ -60,7 +86,7 @@ int	sort(t_node **a, t_node **b, int len)
 		sort_100(a, b);
 	else
 		sort_more(a, b);
-	 return (1);
+	return (1);
 }
 
 // int main()

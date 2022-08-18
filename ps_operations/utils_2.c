@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:50:25 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/25 11:50:48 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:21:16 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	r_loop(t_node **a, int reps)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < reps)
+	while (i < reps)
 	{
 		ra(a);
 		i++;
@@ -26,10 +26,10 @@ void	r_loop(t_node **a, int reps)
 
 void	rr_loop(t_node **a, int reps)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < reps)
+	while (i < reps)
 	{
 		rra(a);
 		i++;
@@ -42,7 +42,7 @@ void	get_to_top(t_node **stack, int index)
 		return ;
 	else
 	{
-		if (index > list_len(*stack)/2)
+		if (index > list_len(*stack) / 2)
 			rr_loop(stack, list_len(*stack) - index);
 		else
 			r_loop(stack, index);

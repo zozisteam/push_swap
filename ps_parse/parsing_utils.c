@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:36:19 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/01 09:12:40 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:26:33 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ int	is_valid_num(char *s)
 		return (-1);
 	while (s[i])
 	{
-		if (i == 0) 
+		if (i == 0)
 		{
-			// index zero and non num/-/+
 			if (ft_isdigit(s[i]) == 1)
 				i++;
-			else if (s[i]  == '+' || s[i] == '-')
+			else if (s[i] == '+' || s[i] == '-')
 				i++;
 			else
 				return (-1);
@@ -54,17 +53,17 @@ int	is_valid_num(char *s)
 int	valid_int_range(char *number)
 {
 	long long	num;
-	
+
 	num = ft_atoi(number);
 	if (num > 2147483647 || num < -2147483648)
-		error();//just to free & exit program
+		error();
 	return (1);
 }
 
 int	no_duplicates(char **numbers)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (numbers[i])
@@ -90,15 +89,11 @@ int	validate_nums(char **numbers)
 		error();
 	while (numbers[i])
 	{
-		//printf("%s\n", numbers[i]);
 		if (is_valid_num(numbers[i]) == -1 || valid_int_range(numbers[i]) == -1)
 		{
-		//	printf("this num didnt pass test\n");
 			free2(numbers);
 			error();
 		}
-		// if (valid_int_range(ft_atoi(numbers[i])) == -1)
-		// 	error();
 		i++;
 	}
 	if (no_duplicates(numbers) == -1)
@@ -106,7 +101,6 @@ int	validate_nums(char **numbers)
 		free2(numbers);
 		error();
 	}
-
 	return (1);
 }
 
@@ -120,6 +114,8 @@ int	validate_input(t_node **a, int argc, char **argv)
 	all_numbers_str = NULL;
 	if (argc == 2)
 	{
+		if (ft_strlen(argv[1]) == 0)
+			exit(1);
 		numbers = ft_split(argv[1], ' ');
 	}
 	else
@@ -142,20 +138,9 @@ int	validate_input(t_node **a, int argc, char **argv)
 	{
 		free2(numbers);
 		error();
-		// printf("not validate nums is where i free\n");
-		// free2(numbers); //```````
-		// printf("done freeing");
-		// return (-1);
+		init_stack(a, numbers, argc);
+		return (1);
 	}
 	init_stack(a, numbers, argc);
 	return (1);
 }
-
-// int main()
-// {
-// 	t_node *a;
-
-// 	a = NULL;
-// 	printf("%d", validate_input(&a, 3, ft_split("./push_swap --5 -2", ' ')));
-
-//}

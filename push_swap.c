@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/01 11:22:59 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:08:37 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,45 +33,15 @@
 // #include "ps_operations/utils_2.c"
 // #include "ps_parse/parsing_utils.c"
 
-
 void	error(void)
 {
 	write(2, "Error\n", 7);
 	exit(1);
 }
 
-void	free_stack(t_node **a)
-{
-	t_node	*current;
-
-	current = *a;
-	while (current != NULL)
-	{
-		delete_node(a);
-		current = *a;
-	}
-}
-
-void	free2(char **x)
-{
-	int i;
-	
-	i = 0;
-	if (x)
-	{
-		while (x[i])
-		{
-			free(x[i]);
-			i++;
-		}
-	}
-	free (x);
-}
-
-
 int	array_len(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i])
@@ -79,9 +49,9 @@ int	array_len(char **arr)
 	return (i);
 }
 
-void	init_stack(t_node **a, char **numbers, int argc) //remove argc bcz i calc arrlen
+void	init_stack(t_node **a, char **numbers, int argc)
 {
-	int		i;
+	int	i;
 
 	(void)argc;
 	i = array_len(numbers) - 1;
@@ -93,10 +63,10 @@ void	init_stack(t_node **a, char **numbers, int argc) //remove argc bcz i calc a
 	free2(numbers);
 }
 
-
 int	parse(t_node **a, int argc, char **argv)
 {
-	//make sure enough nums to sort
+	if (!argv[0])
+		return (0);
 	if (argc <= 1)
 	{
 		if (argc == 1)
@@ -104,8 +74,7 @@ int	parse(t_node **a, int argc, char **argv)
 		free_stack(a);
 		error();
 	}
-	//check only nums & no recurring num
-	if(!validate_input(a, argc, argv))
+	if (!validate_input(a, argc, argv))
 	{
 		return (-1);
 	}
@@ -122,17 +91,13 @@ int	main(int argc, char **argv)
 	if (!parse(&a, argc, argv))
 	{
 		free_stack(&a);
-	 	error();
+		error();
 	}
 	if (sorted(a))
 	{
 		free_stack(&a);
 		return (1);
-	}	
-//	printf("INITIAL STACK a:\n");
-//	print_list(a);
+	}
 	sort(&a, &b, list_len(a));
-	// printf("END STACK a:\n");
-	// print_list(a);
 	free_stack(&a);
 }
