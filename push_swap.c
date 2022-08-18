@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/31 17:23:58 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/01 11:22:59 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,22 @@ void	free2(char **x)
 }
 
 
-void	init_stack(t_node **a, char **numbers, int argc)
+int	array_len(char **arr)
+{
+	int i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
+}
+
+void	init_stack(t_node **a, char **numbers, int argc) //remove argc bcz i calc arrlen
 {
 	int		i;
 
-	i = argc - 2;
+	(void)argc;
+	i = array_len(numbers) - 1;
 	while (i >= 0)
 	{
 		push(a, ft_atoi(numbers[i]));
@@ -81,6 +92,7 @@ void	init_stack(t_node **a, char **numbers, int argc)
 	}
 	free2(numbers);
 }
+
 
 int	parse(t_node **a, int argc, char **argv)
 {
@@ -114,19 +126,13 @@ int	main(int argc, char **argv)
 	}
 	if (sorted(a))
 	{
-	//	print_list(a);
 		free_stack(&a);
 		return (1);
-	}
+	}	
 //	printf("INITIAL STACK a:\n");
 //	print_list(a);
 	sort(&a, &b, list_len(a));
-	//sa(a);
-	//ra(&a);
-//	printf("END STACK a:\n");
-//	print_list(a);
-	
+	// printf("END STACK a:\n");
+	// print_list(a);
 	free_stack(&a);
-//	sort_stacks(a, b);
 }
-//figure out where segmentation error is. only happens when letters. maybe double free or mem leak idk

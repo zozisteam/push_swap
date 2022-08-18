@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:36:19 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/31 17:22:55 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:12:40 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,21 @@ int	validate_input(t_node **a, int argc, char **argv)
 
 	i = 1;
 	all_numbers_str = NULL;
-	while (i < argc)
+	if (argc == 2)
 	{
-		all_numbers_str = ft_strjoin(all_numbers_str, argv[i]);
-		all_numbers_str = ft_strjoin(all_numbers_str, " ");
-		i++;
+		numbers = ft_split(argv[1], ' ');
 	}
-	numbers = ft_split(all_numbers_str, ' ');
-	free(all_numbers_str);
+	else
+	{
+		while (i < argc)
+		{
+			all_numbers_str = ft_strjoin(all_numbers_str, argv[i]);
+			all_numbers_str = ft_strjoin(all_numbers_str, " ");
+			i++;
+		}
+		numbers = ft_split(all_numbers_str, ' ');
+		free(all_numbers_str);
+	}
 	if (!numbers)
 	{
 		free2(numbers);
