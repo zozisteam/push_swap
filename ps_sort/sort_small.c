@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/02 12:35:37 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:19:18 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_2(t_node **a)
 {
-	t_node *head;
+	t_node	*head;
 
 	head = *a;
 	if (head->data > head->next->data)
@@ -23,15 +23,17 @@ void	sort_2(t_node **a)
 
 void	sort_3(t_node **a)
 {
-	t_node *head;
+	t_node	*head;
 
 	head = *a;
-	if (head->data > head->next->data && find_largest(*a) == head->next->next->data)
+	if (head->data > head->next->data
+		&& find_largest(*a) == head->next->next->data)
 	{
 		sa(*a);
 		return ;
 	}
-	if (head->data > head->next->data && find_smallest(*a) == head->next->next->data)
+	if (head->data > head->next->data
+		&& find_smallest(*a) == head->next->next->data)
 	{
 		sa(*a);
 		rra(a);
@@ -55,7 +57,7 @@ void	sort_3(t_node **a)
 
 void	sort_5(t_node **a, t_node **b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 2)
@@ -73,9 +75,9 @@ void	sort_5(t_node **a, t_node **b)
 void	sort_10(t_node **a, t_node **b)
 {
 	int	i;
-	int size;
+	int	size;
 
-	i = 0;	
+	i = 0;
 	while (list_len(*a) > 2)
 	{
 		get_to_top(a, get_index(*a, find_smallest(*a)));
@@ -112,6 +114,11 @@ void	sort_10(t_node **a, t_node **b)
 // 	}
 // }
 //OPTIMIZE THIS^^^^^^^^^^^^^^
+
+// we have to move all elements <= block_max to B
+//if the determined pos of the current number is between the min and
+//max of the current block then we push to b
+//check that we pushed every number from current block to b, then i++
 void	sort_100(t_node **a, t_node **b)
 {
 	int		i;
@@ -121,21 +128,18 @@ void	sort_100(t_node **a, t_node **b)
 	head = *a;
 	i = 0;
 	blocks = 5;
-	while (*a) // we have to move all elements <= block_max to B
+	while (*a)
 	{
-		//if the determined pos of the current number is between the min and max of the current block then we push to b
 		if (head->i >= (i * blocks) && head->i <= (i + 1) * blocks)
 			pb(a, b);
 		else
 		{
-			// get_to_top(a, find_closest_in_chunck())
 			if (get_index(*a, find_smallest(*a)) <= list_len(*a) / 2)
 				ra(a);
 			else
-				rra(a);			
+				rra(a);
 		}
-		//check that we pushed every number from current block to b, then i++
-		if (list_len(*b) == (i + 1) * blocks) 
+		if (list_len(*b) == (i + 1) * blocks)
 			i++;
 		head = *a;
 	}
@@ -146,8 +150,3 @@ void	sort_100(t_node **a, t_node **b)
 	}
 	push_back(a, b);
 }
-
-// int main()
-// {
-	
-// }

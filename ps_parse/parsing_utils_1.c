@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:36:19 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:26:33 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:04:35 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	valid_int_range(char *number)
 
 	num = ft_atoi(number);
 	if (num > 2147483647 || num < -2147483648)
-		error();
+		error(NULL);
 	return (1);
 }
 
@@ -86,32 +86,26 @@ int	validate_nums(char **numbers)
 
 	i = 0;
 	if (!numbers)
-		error();
+		error(NULL);
 	while (numbers[i])
 	{
 		if (is_valid_num(numbers[i]) == -1 || valid_int_range(numbers[i]) == -1)
-		{
-			free2(numbers);
-			error();
-		}
+			error(numbers);
 		i++;
 	}
 	if (no_duplicates(numbers) == -1)
-	{
-		free2(numbers);
-		error();
-	}
+		error(numbers);
 	return (1);
 }
 
 int	validate_input(t_node **a, int argc, char **argv)
 {
 	int		i;
-	char	*all_numbers_str;
+	char	*nbrs_str;
 	char	**numbers;
 
 	i = 1;
-	all_numbers_str = NULL;
+	nbrs_str = NULL;
 	if (argc == 2)
 	{
 		if (ft_strlen(argv[1]) == 0)
@@ -120,27 +114,12 @@ int	validate_input(t_node **a, int argc, char **argv)
 	}
 	else
 	{
-		while (i < argc)
-		{
-			all_numbers_str = ft_strjoin(all_numbers_str, argv[i]);
-			all_numbers_str = ft_strjoin(all_numbers_str, " ");
-			i++;
-		}
-		numbers = ft_split(all_numbers_str, ' ');
-		free(all_numbers_str);
+		nbrs_str = ft_strjoin(input_helper(argc, argv, nbrs_str), "");
+		numbers = ft_split(nbrs_str, ' ');
+		free(nbrs_str);
 	}
-	if (!numbers)
-	{
-		free2(numbers);
-		error();
-	}
-	if (validate_nums(numbers) == -1)
-	{
-		free2(numbers);
-		error();
-		init_stack(a, numbers, argc);
-		return (1);
-	}
+	if (!numbers || validate_nums(numbers) == -1)
+		error(numbers);
 	init_stack(a, numbers, argc);
 	return (1);
 }

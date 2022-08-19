@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 01:23:53 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 19:59:00 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:03:45 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	push_i(t_node **head_ref, int new_data, int i);
 int		pop(t_node **head);
 void	delete_node(t_node **head);
 //utils
-int		is_empty(t_node **head);
+int		is_empty(t_node **head);//
 void	print_list(t_node *current);
 int		list_len(t_node *head);
 t_node	*get_i_node(t_node *head, int i);

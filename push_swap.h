@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:23:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 13:36:45 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:10:06 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,11 @@ void	rr_loop(t_node **a, int reps);
 int		parse(t_node **a, int argc, char **argv);
 int		validate_input(t_node **a, int argc, char **argv);
 void	init_stack(t_node **a, char **numbers, int argc);
+char	*input_helper(int argc, char **argv, char *nbrs_str);
 
-void	error(void);
+//utils
+int		array_len(char **arr);
+void	error(char **x);
 void	free2(char **x);
 void	free_stack(t_node **a);
 

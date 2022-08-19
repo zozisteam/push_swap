@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:08:37 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:05:34 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,6 @@
 // #include "ps_operations/utils_2.c"
 // #include "ps_parse/parsing_utils.c"
 
-void	error(void)
-{
-	write(2, "Error\n", 7);
-	exit(1);
-}
-
-int	array_len(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		i++;
-	return (i);
-}
-
 void	init_stack(t_node **a, char **numbers, int argc)
 {
 	int	i;
@@ -72,7 +56,7 @@ int	parse(t_node **a, int argc, char **argv)
 		if (argc == 1)
 			exit(1);
 		free_stack(a);
-		error();
+		error(NULL);
 	}
 	if (!validate_input(a, argc, argv))
 	{
@@ -91,7 +75,7 @@ int	main(int argc, char **argv)
 	if (!parse(&a, argc, argv))
 	{
 		free_stack(&a);
-		error();
+		error(NULL);
 	}
 	if (sorted(a))
 	{
