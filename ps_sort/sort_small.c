@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/19 15:19:18 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/20 17:53:57 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,20 @@ void	sort_10(t_node **a, t_node **b)
 		pa(a, b);
 		i++;
 	}
+}
+
+int	calc_moves(t_node **a, int chunck_max)
+{
+	int	moves;
+	int	top;
+	int	bot;
+
+	moves = 0;
+	//search from top;
+	get_i_node(a, search_x_between_i_i());
+
+	//search from bottom;
+
 }
 
 // int	find_closest_in_chunck(t_node **a, int chunk_max)

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:11:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:09:03 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/20 17:17:38 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	set_index(t_node *a, int len)
 
 int	sort(t_node **a, t_node **b, int len)
 {
+	printf("%d\n", len);
 	set_index(*a, len);
 	if (len == 2)
 		sort_2(a);

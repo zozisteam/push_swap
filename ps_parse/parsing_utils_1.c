@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   parsing_utils_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:36:19 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/19 15:04:35 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:00:52 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,9 @@ int	validate_nums(char **numbers)
 
 int	validate_input(t_node **a, int argc, char **argv)
 {
-	int		i;
 	char	*nbrs_str;
 	char	**numbers;
 
-	i = 1;
 	nbrs_str = NULL;
 	if (argc == 2)
 	{

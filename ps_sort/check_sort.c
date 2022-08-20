@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:09:38 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/01 09:18:30 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/20 16:57:54 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	sorted(t_node *head)
 	t_node	*current;
 
 	current = head;
-	while(current->next)
+	while (current->next)
 	{
 		if (current->data > current->next->data)
 			return (0);
