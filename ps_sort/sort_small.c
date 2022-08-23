@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/20 17:53:57 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:34:54 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,53 +23,57 @@ void	sort_2(t_node **a)
 
 void	sort_3(t_node **a)
 {
-	t_node	*head;
+	t_node	*one;
+	t_node	*two;
+	t_node	*three;
 
-	head = *a;
-	if (head->data > head->next->data
-		&& find_largest(*a) == head->next->next->data)
-	{
+	one = *a;
+	two = (*a)->next;
+	three = (*a)->next->next;
+	if (one->i == 2 && two->i == 1 && three->i == 3)
 		sa(*a);
-		return ;
-	}
-	if (head->data > head->next->data
-		&& find_smallest(*a) == head->next->next->data)
-	{
-		sa(*a);
+	else if (one->i == 2 && two->i == 3 && three->i == 1)
 		rra(a);
-		return ;
-	}
-	if (head->data == find_largest(*a) && find_smallest(*a) == head->next->data)
-	{
+	else if (one->i == 3 && two->i == 1 && three->i == 2)
 		ra(a);
-		return ;
-	}
-	if (find_largest(*a) == head->next->data && find_smallest(*a) == head->data)
+	else if (one->i == 1 && two->i == 3 && three->i == 2)
 	{
 		sa(*a);
 		ra(a);
-		return ;
 	}
-	else
+	else if (one->i == 3 && two->i == 2 && three->i == 1)
+	{
+		sa(*a);
 		rra(a);
+	}
 	return ;
 }
 
 void	sort_5(t_node **a, t_node **b)
 {
-	int	i;
+	get_to_top(a, 2);
+	get_to_top(a, 1);
+	pb(a, b);
+	pb(a, b);
+	print_list(*a);
+	print_list(*b);
+	sort_3(a);
+	pa(a, b);
+	pa(a, b);
+	// int	i;
 
-	i = 0;
-	while (i < 2)
-	{
-		get_to_top(a, get_index(*a, find_smallest(*a)));
-		pb(a, b);
-		i++;
-	}
-	if (!sorted(*a))
-		sort_3(a);
-	pa(a, b);
-	pa(a, b);
+	// i = 0;
+
+	// while (i < 2)
+	// {
+	// 	get_to_top(a, get_index(*a, find_smallest(*a)));
+	// 	pb(a, b);
+	// 	i++;
+	// }
+	// if (!sorted(*a))
+	// 	sort_3(a);
+	// pa(a, b);
+	// pa(a, b);
 }
 
 void	sort_10(t_node **a, t_node **b)
@@ -92,19 +96,58 @@ void	sort_10(t_node **a, t_node **b)
 	}
 }
 
-int	calc_moves(t_node **a, int chunck_max)
-{
-	int	moves;
-	int	top;
-	int	bot;
+// void	get_to_top_optimized(t_node **a, int chunck_max)
+// {
+// 	int	top;
+// 	int	bot;
 
-	moves = 0;
-	//search from top;
-	get_i_node(a, search_x_between_i_i());
+// 	//search from top;
+// 	top = get_index(a, search_upper_half(a, chunck_max));
+// 	//search from bottom;
+// 	bot = get_index(a, search_lower_half(a, chunck_max));
+// 	if (top <= (list_len(a) - bot))
+// 		get_to_top(a, top);
+// 	else
+// 		get_to_top(a, bot);
+// }
 
-	//search from bottom;
+// int	search_lower_half(t_node **a, int chunk_max)
+// {
+// 	int		i;
+// 	int		min;
+// 	t_node	*current;
 
-}
+// 	i = 0;
+// 	current = *a;
+// 	min = chunk_max;
+// 	while (i < list_len(*a) / 2)
+// 	{
+// 		current = current->next;
+// 		i++;
+// 	}
+// 	while (current != NULL)
+// 	{
+// 		if (current->data < chunk_max)
+// 			min = current->data;
+// 		current = current->next
+// 	}
+// }
+
+// int	search_upper_half(t_node **a, int chunk_max)
+// {
+// 	int		i;
+// 	t_node	*current;
+
+// 	i = 0;
+// 	current = *a;
+// 	while (i < list_len(*a) / 2)
+// 	{
+// 		if (current->data <= chunk_max)
+// 			return (current->data);
+// 		i++;
+// 		current = current->next;
+// 	}
+// }
 
 // int	find_closest_in_chunck(t_node **a, int chunk_max)
 // {
@@ -113,7 +156,7 @@ int	calc_moves(t_node **a, int chunck_max)
 // 	int moves;
 // 	//25 chunk max
 // 	//a->i 1 - 25
-// 	//calc movs till top and save which index takes lowest steps and update if theres lower
+//calc movs till top and save which index takes lowest steps and update if theres lower
 // 	//the one with lowest gets pushed to top then into b
 // 	i = 0;
 // 	current = *a;

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:25:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:16:07 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/23 20:06:07 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	print_list(t_node *head)
 	current = head;
 	while (current != NULL)
 	{
-		printf("%d  ", current->data);
+		printf("[%d]%d  ", current->i, current->data);
 		current = current->next;
 	}
 	printf("\n");
