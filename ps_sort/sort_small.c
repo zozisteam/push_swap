@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/23 21:34:54 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:38:16 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	sort_3(t_node **a)
 
 void	sort_5(t_node **a, t_node **b)
 {
+	print_list(*a);
+	printf("%d %d\n", get_i_node(*a, 0)->data, get_i_node(*a, 1)->data);
 	get_to_top(a, 2);
 	get_to_top(a, 1);
 	pb(a, b);
