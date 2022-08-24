@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:49:07 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:20:15 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:56:37 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	get_blocks(int list_len)
 {
 	if (list_len > 400)
-		return (30);
+		return (35);
 	if (list_len > 100)
 		return (10);
 	if (list_len > 50)

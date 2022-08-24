@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:36:19 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/20 15:00:52 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/24 17:45:56 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,9 @@ int	validate_input(t_node **a, int argc, char **argv)
 		numbers = ft_split(nbrs_str, ' ');
 		free(nbrs_str);
 	}
-	if (!numbers || validate_nums(numbers) == -1)
+	if (!numbers || numbers[0] == NULL || validate_nums(numbers) == -1)
 		error(numbers);
 	init_stack(a, numbers, argc);
+	printf("[%s]\n", numbers[0]);
 	return (1);
 }
