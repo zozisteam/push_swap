@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 12:07:08 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/07/31 13:40:00 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:36:48 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,3 @@ long long	ft_atoi(char *str)
 	integer = ret_int(integer, flag);
 	return (integer);
 }
-

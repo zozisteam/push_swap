@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:41 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:19:45 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:28:32 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	rrb(t_node **b)
 
 void	rrr(t_node **a, t_node **b)
 {
-	t_node *head;
-	t_node *last;
-	t_node *new_last;
+	t_node	*head;
+	t_node	*last;
+	t_node	*new_last;
 
 	head = *a;
 	last = get_i_node(*a, list_len(*a) - 1);

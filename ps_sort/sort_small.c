@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/23 21:38:16 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:24:37 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,19 @@ void	sort_3(t_node **a)
 
 void	sort_5(t_node **a, t_node **b)
 {
-	print_list(*a);
-	printf("%d %d\n", get_i_node(*a, 0)->data, get_i_node(*a, 1)->data);
-	get_to_top(a, 2);
-	get_to_top(a, 1);
-	pb(a, b);
-	pb(a, b);
-	print_list(*a);
-	print_list(*b);
-	sort_3(a);
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		get_to_top(a, get_index(*a, find_smallest(*a)));
+		pb(a, b);
+		i++;
+	}
+	if (!sorted(*a))
+		sort_3(a);
 	pa(a, b);
 	pa(a, b);
-	// int	i;
-
-	// i = 0;
-
-	// while (i < 2)
-	// {
-	// 	get_to_top(a, get_index(*a, find_smallest(*a)));
-	// 	pb(a, b);
-	// 	i++;
-	// }
-	// if (!sorted(*a))
-	// 	sort_3(a);
-	// pa(a, b);
-	// pa(a, b);
 }
 
 void	sort_10(t_node **a, t_node **b)
@@ -158,7 +146,8 @@ void	sort_10(t_node **a, t_node **b)
 // 	int moves;
 // 	//25 chunk max
 // 	//a->i 1 - 25
-//calc movs till top and save which index takes lowest steps and update if theres lower
+//calc movs till top and save which index takes lowest steps 
+//and update if theres lower
 // 	//the one with lowest gets pushed to top then into b
 // 	i = 0;
 // 	current = *a;
@@ -178,34 +167,34 @@ void	sort_10(t_node **a, t_node **b)
 //if the determined pos of the current number is between the min and
 //max of the current block then we push to b
 //check that we pushed every number from current block to b, then i++
-void	sort_100(t_node **a, t_node **b)
-{
-	int		i;
-	t_node	*head;
-	int		blocks;
+// void	sort_100(t_node **a, t_node **b)
+// {
+// 	int		i;
+// 	t_node	*head;
+// 	int		blocks;
 
-	head = *a;
-	i = 0;
-	blocks = 5;
-	while (*a)
-	{
-		if (head->i >= (i * blocks) && head->i <= (i + 1) * blocks)
-			pb(a, b);
-		else
-		{
-			if (get_index(*a, find_smallest(*a)) <= list_len(*a) / 2)
-				ra(a);
-			else
-				rra(a);
-		}
-		if (list_len(*b) == (i + 1) * blocks)
-			i++;
-		head = *a;
-	}
-	while (list_len(*a) > 1)
-	{
-		get_to_top(a, get_index(*a, find_smallest(*a)));
-		pb(a, b);
-	}
-	push_back(a, b);
-}
+// 	head = *a;
+// 	i = 0;
+// 	blocks = 5;
+// 	while (*a)
+// 	{
+// 		if (head->i >= (i * blocks) && head->i <= (i + 1) * blocks)
+// 			pb(a, b);
+// 		else
+// 		{
+// 			if (get_index(*a, find_smallest(*a)) <= list_len(*a) / 2)
+// 				ra(a);
+// 			else
+// 				rra(a);
+// 		}
+// 		if (list_len(*b) == (i + 1) * blocks)
+// 			i++;
+// 		head = *a;
+// 	}
+// 	while (list_len(*a) > 1)
+// 	{
+// 		get_to_top(a, get_index(*a, find_smallest(*a)));
+// 		pb(a, b);
+// 	}
+// 	push_back(a, b);
+// }

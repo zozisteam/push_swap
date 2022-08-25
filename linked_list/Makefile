@@ -1,6 +1,6 @@
 NAME = liblist.a
 
-SRCS = *.c
+SRCS = list_utils_0.c list_utils_1.c list_utils_2.c
 
 SRCO = $(SRCS:.c=.o)
 

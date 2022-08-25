@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:07:37 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/20 15:18:17 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:33:33 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ char		*ft_substr(char *s, unsigned int start, size_t len);
 int			ft_tolower(int ch);
 int			ft_toupper(int ch);
 size_t		ft_strlcpy(char *dst, char *src, size_t dstsize);
-char*		ft_strcpy(char* dest, char* src);
+char		*ft_strcpy(char *dest, char *src);
 
 #endif

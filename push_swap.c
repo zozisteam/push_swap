@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/24 17:49:52 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:18:59 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,5 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	sort(&a, &b, list_len(a));
-	//print_list(a);
 	free_stack(&a);
 }
