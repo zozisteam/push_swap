@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   list_utils_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:25:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/23 20:06:07 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/26 16:36:15 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	print_list(t_node *head)
 	current = head;
 	while (current != NULL)
 	{
-		printf("[%d]%d  ", current->i, current->data);
+		printf("%d  ", current->data);
 		current = current->next;
 	}
 	printf("\n");

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:23:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/19 15:10:06 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/26 16:51:29 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	push_back(t_node **a, t_node **b);
 void	get_to_top(t_node **stack, int index);
 void	r_loop(t_node **a, int reps);
 void	rr_loop(t_node **a, int reps);
+void	set_index(t_node *a, int len);
 
 //parsing
 int		parse(t_node **a, int argc, char **argv);
