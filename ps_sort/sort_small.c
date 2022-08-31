@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 19:49:27 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/26 16:53:59 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/31 12:02:07 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	sort_2(t_node **a)
 		sa(*a);
 }
 
+//check according to (i). is is the order they should be sorted
+//as. (we use set_index before using sort_3)
 void	sort_3(t_node **a)
 {
 	t_node	*one;
@@ -51,9 +53,9 @@ void	sort_3(t_node **a)
 
 void	sort_5(t_node **a, t_node **b)
 {
-	get_to_top(a, get_index(*a, find_smallest(*a)));
+	get_to_top_a(a, get_index(*a, find_smallest(*a)));
 	pb(a, b);
-	get_to_top(a, get_index(*a, find_smallest(*a)));
+	get_to_top_a(a, get_index(*a, find_smallest(*a)));
 	pb(a, b);
 	set_index(*a, list_len(*a));
 	sort_3(a);
@@ -69,7 +71,7 @@ void	sort_10(t_node **a, t_node **b)
 	i = 0;
 	while (list_len(*a) > 2)
 	{
-		get_to_top(a, get_index(*a, find_smallest(*a)));
+		get_to_top_a(a, get_index(*a, find_smallest(*a)));
 		pb(a, b);
 	}
 	sort_2(a);
@@ -80,116 +82,3 @@ void	sort_10(t_node **a, t_node **b)
 		i++;
 	}
 }
-
-// void	get_to_top_optimized(t_node **a, int chunck_max)
-// {
-// 	int	top;
-// 	int	bot;
-
-// 	//search from top;
-// 	top = get_index(a, search_upper_half(a, chunck_max));
-// 	//search from bottom;
-// 	bot = get_index(a, search_lower_half(a, chunck_max));
-// 	if (top <= (list_len(a) - bot))
-// 		get_to_top(a, top);
-// 	else
-// 		get_to_top(a, bot);
-// }
-
-// int	search_lower_half(t_node **a, int chunk_max)
-// {
-// 	int		i;
-// 	int		min;
-// 	t_node	*current;
-
-// 	i = 0;
-// 	current = *a;
-// 	min = chunk_max;
-// 	while (i < list_len(*a) / 2)
-// 	{
-// 		current = current->next;
-// 		i++;
-// 	}
-// 	while (current != NULL)
-// 	{
-// 		if (current->data < chunk_max)
-// 			min = current->data;
-// 		current = current->next
-// 	}
-// }
-
-// int	search_upper_half(t_node **a, int chunk_max)
-// {
-// 	int		i;
-// 	t_node	*current;
-
-// 	i = 0;
-// 	current = *a;
-// 	while (i < list_len(*a) / 2)
-// 	{
-// 		if (current->data <= chunk_max)
-// 			return (current->data);
-// 		i++;
-// 		current = current->next;
-// 	}
-// }
-
-// int	find_closest_in_chunck(t_node **a, int chunk_max)
-// {
-// 	int	i;
-// 	t_node	*current;
-// 	int moves;
-// 	//25 chunk max
-// 	//a->i 1 - 25
-//calc movs till top and save which index takes lowest steps 
-//and update if theres lower
-// 	//the one with lowest gets pushed to top then into b
-// 	i = 0;
-// 	current = *a;
-// 	moves = calc_moves();
-// 	while (current)
-// 	{
-// 		if (current->i <= chunk_max)
-// 		{
-// 			if (calc_moves(a, current) < moves);
-// 		}
-// 		current = current->next;
-// 	}
-// }
-//OPTIMIZE THIS^^^^^^^^^^^^^^
-
-// we have to move all elements <= block_max to B
-//if the determined pos of the current number is between the min and
-//max of the current block then we push to b
-//check that we pushed every number from current block to b, then i++
-// void	sort_100(t_node **a, t_node **b)
-// {
-// 	int		i;
-// 	t_node	*head;
-// 	int		blocks;
-
-// 	head = *a;
-// 	i = 0;
-// 	blocks = 5;
-// 	while (*a)
-// 	{
-// 		if (head->i >= (i * blocks) && head->i <= (i + 1) * blocks)
-// 			pb(a, b);
-// 		else
-// 		{
-// 			if (get_index(*a, find_smallest(*a)) <= list_len(*a) / 2)
-// 				ra(a);
-// 			else
-// 				rra(a);
-// 		}
-// 		if (list_len(*b) == (i + 1) * blocks)
-// 			i++;
-// 		head = *a;
-// 	}
-// 	while (list_len(*a) > 1)
-// 	{
-// 		get_to_top(a, get_index(*a, find_smallest(*a)));
-// 		pb(a, b);
-// 	}
-// 	push_back(a, b);
-// }

@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:12:41 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/25 16:28:32 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:45:30 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ void	rrr(t_node **a, t_node **b)
 	last->next = head;
 	new_last->next = NULL;
 	(*b) = last;
-	ft_printf("rrb\n");
+	ft_printf("rrr\n");
 }

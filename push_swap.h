@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 18:23:59 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/26 16:51:29 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:41:38 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ void	sort_2(t_node **a);
 
 //list operations
 int		get_blocks(int list_len);
-void	update_pos(t_node **stack);
 void	push_back(t_node **a, t_node **b);
-void	get_to_top(t_node **stack, int index);
-void	r_loop(t_node **a, int reps);
-void	rr_loop(t_node **a, int reps);
+void	get_to_top_a(t_node **stack, int index);
+void	ra_loop(t_node **a, int reps);
+void	rra_loop(t_node **a, int reps);
+void	get_to_top_b(t_node **stack, int index);
+void	rb_loop(t_node **b, int reps);
+void	rrb_loop(t_node **b, int reps);
 void	set_index(t_node *a, int len);
 
 //parsing

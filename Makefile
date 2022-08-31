@@ -8,6 +8,7 @@ LLIB = cd linked_list && make
 LIB = libft/libft.a
 LISTLIB = linked_list/liblist.a
 CC = gcc
+ARG =  
 
 $(NAME): $(OBJ)
 	$(LIBFT)
@@ -25,5 +26,10 @@ fclean: clean
 	rm -rf $(NAME)
 	cd linked_list && make fclean
 	cd libft && make fclean
+
+test:
+	@./push_swap $(ARG)
+	@./push_swap $(ARG) | wc -l
+	@./push_swap $(ARG) | ./checker $(ARG)
 
 re: fclean all

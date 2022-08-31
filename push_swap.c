@@ -6,32 +6,11 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:14:51 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/26 17:35:11 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/31 12:04:11 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include "libft/ft_atoi.c"
-// #include "libft/ft_x.c"
-// #include "libft/ft_strlcpy.c"
-// #include "libft/ft_isdigit.c"
-// #include "libft/ft_strlen.c"
-// #include "linked_list/list_len.c"
-// #include "linked_list/pop.c"
-// #include "linked_list/delete_node.c"
-// #include "linked_list/list_utils.c"
-// #include "linked_list/push.c"
-// #include "ps_sort/sort.c"
-// #include "ps_sort/check_sort.c"
-// #include "ps_sort/sort_more.c"
-// #include "ps_sort/sort2_3_5_10.c"
-// #include "ps_operations/pa_pb.c"
-// #include "ps_operations/sa_sb_ss.c"
-// #include "ps_operations/ra_rb_rr.c"
-// #include "ps_operations/rra_rrb_rrr.c"
-// #include "ps_operations/utils_1.c"
-// #include "ps_operations/utils_2.c"
-// #include "ps_parse/parsing_utils.c"
 
 void	init_stack(t_node **a, char **numbers, int argc)
 {

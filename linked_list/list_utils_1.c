@@ -6,7 +6,7 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:25:33 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/26 16:36:15 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:08:08 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	print_list(t_node *head)
 	current = head;
 	while (current != NULL)
 	{
-		printf("%d  ", current->data);
+		ft_printf("%d  ", current->data);
 		current = current->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
 
 int	get_index(t_node *head, int x)

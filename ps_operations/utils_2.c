@@ -6,13 +6,16 @@
 /*   By: alalmazr <alalmazr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:50:25 by alalmazr          #+#    #+#             */
-/*   Updated: 2022/08/18 20:21:16 by alalmazr         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:37:06 by alalmazr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	r_loop(t_node **a, int reps)
+//these functions repeat rotation/reverse rotation as many times as (int reps)
+//this is used to get a specific number to the top of the stack
+//used with function: get_to_top_a()/get_to_top_b();
+void	ra_loop(t_node **a, int reps)
 {
 	int	i;
 
@@ -24,7 +27,7 @@ void	r_loop(t_node **a, int reps)
 	}
 }
 
-void	rr_loop(t_node **a, int reps)
+void	rra_loop(t_node **a, int reps)
 {
 	int	i;
 
@@ -36,15 +39,26 @@ void	rr_loop(t_node **a, int reps)
 	}
 }
 
-void	get_to_top(t_node **stack, int index)
+void	rb_loop(t_node **b, int reps)
 {
-	if (index == 0)
-		return ;
-	else
+	int	i;
+
+	i = 0;
+	while (i < reps)
 	{
-		if (index > list_len(*stack) / 2)
-			rr_loop(stack, list_len(*stack) - index);
-		else
-			r_loop(stack, index);
+		rb(b);
+		i++;
+	}
+}
+
+void	rrb_loop(t_node **a, int reps)
+{
+	int	i;
+
+	i = 0;
+	while (i < reps)
+	{
+		rrb(a);
+		i++;
 	}
 }
